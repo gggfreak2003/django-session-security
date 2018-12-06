@@ -20,11 +20,11 @@ It provides sensible defaults so you could start with just::
     {% include 'session_security/dialog.html' %}
 
     {# Load SessionSecurity javascript 'class', jquery should be loaded - by you - at this point #}
-    <script type="text/javascript" src="{% static 'session_security/script.js' %}"></script>
+    <script src="{% static 'session_security/script.js' %}"></script>
 
     {# Bootstrap a SessionSecurity instance as the sessionSecurity global variable #}
     {% localize off %}
-        <script type="text/javascript">
+        <script>
             var sessionSecurity = new yourlabs.SessionSecurity({
                 pingUrl: '{% url 'session_security_ping' %}',
                 warnAfter: {{ request|warn_after|unlocalize }},
